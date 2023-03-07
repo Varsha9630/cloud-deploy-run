@@ -22,6 +22,7 @@ gcloud config set project <project-id>
     - Service Account Admin - `roles/iam.serviceAccountAdmin`
     - Service Usage Admin - `roles/serviceusage.serviceUsageAdmin`
     - Cloud Build Editor - `roles/cloudbuild.builds.editor`
+    - Viewer - `roles/viewer`
     
 ### A. Things to be deployed initially as a Prerequisite in order to execute above **Cloud Build Trigger**
 
@@ -86,7 +87,7 @@ gcloud config set project <project-id>
       - cloud-deploy-run-yamls->myapp-dev.yaml
       - cloud-deploy-run-yamls->myapp-stage.yaml
       - cloud-deploy-run-yamls->myapp-prod.yaml
-      - cloud-deploy-run-yamls->skaffold.yaml
+      - skaffold.yaml
       - terraform->cloud-build-trigger->terraform.tfvars
  
 
@@ -100,8 +101,14 @@ c. terraform apply
 ```
 6. Open the GCP Console. Navigate to the `Cloud Build` section from GCP Console and click on the `Triggers` from the left panel.
 
-7. Search for the Trigger name `demo-cloud-deploy-run-pipeline-test`. Next, click on `RUN`. Specify then click on the `RUN TRIGGER`.
-  
+7. Search for the Trigger name `demo-cloud-deploy-run-pipeline-test`. Next, click on `RUN`.
+
 **Note:** For the purpose of we are going to run the trigger manually but this can be automated as per your need. For the same you can edit your`CloudBuild Trigger` and choose `Push to a branch` from `Event Section`. Also, can click on `History` from the left panel and check for the build details for all the recent triggers.
 
-8. Next open the GCP Console. Navigate to the `Cloud Deploy` and `Cloud Run` section from GCP Console. Check for the first release in `Cloud Run` page from the GCP Console.
+8. Specify branch name as **main** and then click on the `RUN TRIGGER`.
+
+9. Open the [Build History page](https://console.cloud.google.com/cloud-build/builds). 
+
+10. Wait till the Triggres get completed.
+
+11. Next open the GCP Console. Navigate to the `Cloud Deploy` and `Cloud Run` section from GCP Console. Check for the first release name `dev` in `Cloud Run` page from the GCP Console.
