@@ -73,9 +73,9 @@ gcloud config set project <project-id>
 2. Checkout to automated-cloudrun-deploy-using-cloud-deploy branch using `git checkout automated-cloudrun-deploy-using-cloud-deploy`
 
 3. Below files in given path needs to be changed before executing any terraform module
-   - **a.** Replace the GCS `<bucket-name>` in the given below file path with the gcs terraform bucket name created above in `Step A.4(1)`.
+   - **a.** Replace the GCS `<bucket-name>` in the given below file path with the gcs terraform bucket name created above in `Step A.4(i)`.
       - terraform->env->test->cloud-build-trigger->backend.tf
-   - **b.** Replace the GCS `<cb-logs-bucket-name>` in the given below file path with the gcs terraform bucket name created above in `Step A.4(1)`.
+   - **b.** Replace the GCS `<cb-logs-bucket-name>` in the given below file path with the gcs terraform bucket name created above in `Step A.4(ii)`.
       - cloud-deploy-run-yamls->cloudbuild.yaml
    - **c.** Replace the `<repo-name>` in the given below file path with the source code repo name created above in `Step A(5)`.
       - terraform->env->test->cloud-build-trigger->terraform.tfvars
