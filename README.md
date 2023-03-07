@@ -91,7 +91,7 @@ gcloud config set project <project-id>
       - terraform->cloud-build-trigger->terraform.tfvars
  
 
-4. After updating the above commit push your changes back to Google CSR
+4. After updating the above commit push your changes back to Google CSR created above in step A(5).
 
 5. Run following terraform commands in given directory path `terraform/env/test/cloud-build-triggers`
 ```
